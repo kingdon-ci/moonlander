@@ -2,10 +2,10 @@
 
 set -ex
 
-KARPENTER_VERSION=1.3.3
-KARPENTER_NAMESPACE=kube-system
+MOONLANDER_VERSION=0.1.1
+MOONLANDER_NAMESPACE=urmanac
 
 helm upgrade --install karpenter-crd oci://zot.urmanac.com/moon/lander-crd \
-  --version ${KARPENTER_VERSION} --namespace "${KARPENTER_NAMESPACE}" --create-namespace
+  --version ${MOONLANDER_VERSION} --namespace "${MOONLANDER_NAMESPACE}" --create-namespace
 
 kubectl apply -f test/yaml/test-lander.yaml
