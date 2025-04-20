@@ -39,7 +39,7 @@ jobs:
       - name: Deploy test resources
         run: |
           ./hack/kind-deploy.sh
-          ./hack/kind-karpenter-test-mocks.sh
+          ./hack/kind-moonlander-test-mocks.sh
 
       - name: Run integration tests
         run: |

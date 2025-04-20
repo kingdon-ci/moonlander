@@ -13,6 +13,16 @@ push: all deploy
 
 all: build-and-set
 
+CONTROLLER_GEN = $(shell which controller-gen)
+
+.PHONY: generate
+generate:
+	$(CONTROLLER_GEN) object:headerFile="" paths="./..."
+
+.PHONY: manifests
+manifests:
+	$(CONTROLLER_GEN) crd:crdVersions=v1 paths="./..."
+
 ko-build-push:
 	ko build ./cmd/moonlander --bare
 
